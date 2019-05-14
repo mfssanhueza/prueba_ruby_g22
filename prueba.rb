@@ -62,16 +62,16 @@ notas_arr = read_alum('notas.csv')
 notas_hash = arreglo_a_hash(notas_arr)
 
 option = 1
-while option != 4
+while option != 4.0
     puts "Ingrese 1 para ver el nombre de cada alumno y su promedio.\nIngrese 2 para ver cantidad de inasistencias por alumno.\nIngrese 3 para ver listado de alumnos aprobados.\nIngrese 4 para salir."
-    option = gets.chomp.to_i
-    if option == 1
+    option = gets.chomp.to_f
+    if option == 1.0
         show_names_averages(notas_hash)
-    elsif option == 2
+    elsif option == 2.0
         show_inasistencias(notas_hash)
-    elsif option == 3
+    elsif option == 3.0
         show_aprobados(notas_hash)
-    elsif option == 4
+    elsif option == 4.0
         puts 'Adiós'
     else
         puts 'Opción inválida.'
