@@ -46,20 +46,34 @@ def show_inasistencias(hash)
     end
 end
 
+def aprobado?(nota, nota_aprobacion=5.0)
+    return true if nota > nota_aprobacion
+end
+
+def show_aprobados(hash)
+    hash.each do |key, value|
+        if aprobado?(promedio(value)) == true
+            puts "#{key} aprobó con nota #{promedio(value)}."
+        end
+    end
+end
+
 notas_arr = read_alum('notas.csv')
 notas_hash = arreglo_a_hash(notas_arr)
 
 option = 1
 while option != 4
-    puts "Ingrese 1 para ver el nombre cada alumno y su promedio.\n Ingrese 2 para ver .\n ingrese 3 para.\n Ingrese 4 para salir."
+    puts "Ingrese 1 para ver el nombre de cada alumno y su promedio.\nIngrese 2 para ver cantidad de inasistencias por alumno.\nIngrese 3 para ver listado de alumnos aprobados.\nIngrese 4 para salir."
     option = gets.chomp.to_i
     if option == 1
         show_names_averages(notas_hash)
     elsif option == 2
         show_inasistencias(notas_hash)
     elsif option == 3
+        show_aprobados(notas_hash)
     elsif option == 4
+        puts 'Adiós'
     else
-        puts 'Opción inválida'
+        puts 'Opción inválida.'
     end
 end
