@@ -9,9 +9,7 @@ def arreglo_a_hash(arreglo)
     arreglo.each do |ele|
         aux_arr = []
         ele.each_with_index do |e, i|
-            if i == 0
-                aux_hash[e.to_sym] = ''
-            else
+            if i != 0
                 aux_arr.push(e.to_i)
             end
             aux_hash[ele[0].to_sym] = aux_arr
