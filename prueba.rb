@@ -28,6 +28,24 @@ def show_names_averages(hash)
         puts "#{key} tiene promedio #{promedio(value)}"
     end
 end
+def show_inasistencias(hash)
+    hash.each do |key, value|
+        vez_veces = ''
+        counter = 0
+        value.each do |ele|
+            if ele == 0
+                counter += 1
+            end
+        end
+        if counter == 1
+            vez_veces = 'vez'
+        else
+            vez_veces = 'veces'
+        end
+        puts "#{key} ha faltado #{counter} #{vez_veces}." if counter > 0
+    end
+end
+
 notas_arr = read_alum('notas.csv')
 notas_hash = arreglo_a_hash(notas_arr)
 
@@ -38,6 +56,7 @@ while option != 4
     if option == 1
         show_names_averages(notas_hash)
     elsif option == 2
+        show_inasistencias(notas_hash)
     elsif option == 3
     elsif option == 4
     else
