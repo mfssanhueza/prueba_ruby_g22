@@ -19,6 +19,28 @@ def arreglo_a_hash(arreglo)
     end
     return aux_hash
 end
+def promedio(arreglo)
+    promedio = arreglo.sum.to_f/arreglo.length
+    return promedio
+end
+def show_names_averages(hash)
+    hash.each do |key, value|
+        puts "#{key} tiene promedio #{promedio(value)}"
+    end
+end
 notas_arr = read_alum('notas.csv')
 notas_hash = arreglo_a_hash(notas_arr)
-puts notas_hash
+
+option = 1
+while option != 4
+    puts "Ingrese 1 para ver el nombre cada alumno y su promedio.\n Ingrese 2 para.\n ingrese 3 para.\n Ingrese 4 para salir."
+    option = gets.chomp.to_i
+    if option == 1
+        show_names_averages(notas_hash)
+    elsif option == 2
+    elsif option == 3
+    elsif option == 4
+    else
+        puts 'Opción inválida'
+    end
+end
