@@ -42,7 +42,7 @@ def show_inasistencias(hash)
         else
             vez_veces = 'veces'
         end
-        puts "#{key} ha faltado #{counter} #{vez_veces}." if counter > 0
+        puts "#{key} ha faltado #{counter} #{vez_veces}."
     end
 end
 
@@ -51,7 +51,7 @@ notas_hash = arreglo_a_hash(notas_arr)
 
 option = 1
 while option != 4
-    puts "Ingrese 1 para ver el nombre cada alumno y su promedio.\n Ingrese 2 para.\n ingrese 3 para.\n Ingrese 4 para salir."
+    puts "Ingrese 1 para ver el nombre cada alumno y su promedio.\n Ingrese 2 para ver .\n ingrese 3 para.\n Ingrese 4 para salir."
     option = gets.chomp.to_i
     if option == 1
         show_names_averages(notas_hash)
