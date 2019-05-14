@@ -1,2 +1,2 @@
-https://github.com/mfssanhueza/prueba_ruby_g22
-hola
+Hola del virtualbox desfazada.
+La prueba se realizó el martes 14 durante horario de clases.
